@@ -2,5 +2,6 @@ flask
 redis
 pytest
 fakeredis
+requests
 
 

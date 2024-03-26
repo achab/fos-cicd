@@ -2,8 +2,10 @@ FROM node:10-alpine
 
 WORKDIR /usr/src/app
 
+COPY . .
+
 RUN npm install
 
-EXPOSE 8080
+EXPOSE 8090
 
 CMD [ "npm", "start" ]
