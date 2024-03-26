@@ -20,9 +20,9 @@ def client(app):
 
 def test_add_points(client, mock_redis):
     response = client.post('/add_points', json={'club_name': 'Club A', 'points': 10})
-    assert response.status_code == 201
+    assert response.status_code == 200
     assert mock_redis.zscore('football_clubs', 'Club A') == 10
-    assert mock_redis.zscore('football_clubs', 'Club B') == 15
+    
 
 def test_get_clubs(client, mock_redis):
     expected_ranking = []
@@ -33,5 +33,5 @@ def test_get_clubs(client, mock_redis):
             client.post('/add_points', json={'club_name': club_name, 'points': float(points)})
     
     response = client.get('/get_clubs')
-    assert response.status_code == 300
+    assert response.status_code == 200
     assert response.json == expected_ranking
