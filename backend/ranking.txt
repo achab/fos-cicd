@@ -1,0 +1,16 @@
+MC Alger,49
+CS Constantine,37
+CR Belouizdad,35
+USM Alger,35
+ES Sétif,34
+Paradou AC,32
+MC El Bayadh,28
+US Biskra,28
+USM KHENCHLA,28
+JS Kabylie,27
+JS Saoura,27
+ASO Chlef,24
+NC Magra,22
+ES BEN AKNOUN,20
+MC Oran,19
+US SOUF,7

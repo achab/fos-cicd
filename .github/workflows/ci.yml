@@ -1,0 +1,30 @@
+name: Continuous Integration
+
+on: [push]
+
+jobs:
+  test-backend:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install dependencies
+      run: |
+        cd backend
+        pip install -r requirements.txt
+    - name: Run tests
+      run: |
+        cd backend
+        pytest
+
+  build-backend-image:
+    needs: test-backend
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build Docker images
+      run: |
+        docker compose build
